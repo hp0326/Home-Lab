@@ -108,9 +108,26 @@ EOF
 
 }
 
+enable_updates() {
+
+	log "Enabling updates"
+
+	export DEBIAN_FRONTEND=noninteractive
+
+	apt-get install -y unattended-upgrades
+
+	cat > /etc/apt/apt.conf.d/20auto-upgrades <<'EOF'
+APT::Periodic::Update-Package-Lists "1"
+APT::Periodic::Unattended-Upgrade "1"
+
+EOF
+
+}
+
 #main
 
 create_user
 setup_firewall
 harden_ssh
 setup_fail2ban
+enable_updates
