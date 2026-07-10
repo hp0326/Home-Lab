@@ -80,7 +80,7 @@ KbdInteractiveAuthentication no
 EOF
 
 	sshd -t
-	systemctl reload-on-restart ssh
+	systemctl reload-or-restart ssh
 
 }
 
