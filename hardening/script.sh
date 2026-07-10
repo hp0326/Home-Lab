@@ -69,8 +69,30 @@ EOF
 
 }
 
+harden_ssh() {
+
+	log "Hardening ssh"
+
+	cat > /etc/ssh/sshd_config.d/99-hardening.conf <<'EOF'
+PermitRootLogin no
+PasswordAuthentication no
+KbdInteractiveAuthentication no
+EOF
+
+	sshd -t
+	systemctl reload ssh
+
+}
+
+setup_fail2ban() {
+
+	log "Setting up fail2ban"
+
+}
 
 #main
 
 create_user
 setup_firewall
+harden_ssh
+setup_fail2ban
