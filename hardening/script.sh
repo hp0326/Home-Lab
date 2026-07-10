@@ -80,13 +80,31 @@ KbdInteractiveAuthentication no
 EOF
 
 	sshd -t
-	systemctl reload ssh
+	systemctl reload-on-restart ssh
 
 }
 
 setup_fail2ban() {
 
 	log "Setting up fail2ban"
+
+	export DEBIAN_FRONTEND=noninteractive
+
+	apt-get update
+	apt-get install fail2ban -y
+
+	cat > /etc/fail2ban/jail.local <<'EOF'
+[sshd]
+enabled=true
+port=ssh
+maxretry=4
+findtime=600
+bantime=3600
+ignoreip=127.0.0.1/8 192.168.10.0/24
+EOF
+
+	systemctl restart fail2ban
+	systemctl enable fail2ban
 
 }
 
