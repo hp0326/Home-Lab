@@ -1,13 +1,23 @@
 # Home-Lab 
 Segmented network with services: Linux router, DMZ with reverse proxy, hardening, infrastructure verifying script
 
-## Technologies used
-Ubuntu, nftables, dnsmasq, Docker, nginx, WireGuard, Python, PowerShell
-
 ## Network architecture
 <img width="759" height="661" alt="Network architecture - three segmented zones" src="https://github.com/user-attachments/assets/7f8c8f2d-5053-47ea-9e59-1566ca5cb7ee" />
 
-## Network addressing
+## Technologies used
+Ubuntu, nftables, dnsmasq, Docker, nginx, WireGuard, Python, PowerShell
+
+## What this project demonstrates
+
+## Problems & lessons learned
+
+## Components
+
+## Status
+
+## Technical details
+
+Network addressing
 
 | Area     | Subnet            | Gateway (router) | DHCP pool        |
 |----------|-------------------|------------------|------------------|
@@ -15,11 +25,9 @@ Ubuntu, nftables, dnsmasq, Docker, nginx, WireGuard, Python, PowerShell
 | DMZ      | 192.168.20.0/24   | 192.168.20.1     | static           |
 | SERVERS  | 192.168.30.0/24   | 192.168.30.1     | static           |
 
-## Virtual Machines
+Virtual Machines
 
-## Services in DMZ
+Firewall rules
 
-## Firewall rules
-
-## DNS and DHCP
+DNS and DHCP
 
