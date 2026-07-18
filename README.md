@@ -5,7 +5,7 @@ Segmented network with services: Linux router, DMZ with reverse proxy, hardening
 Ubuntu, nftables, dnsmasq, Docker, nginx, WireGuard, Python, PowerShell
 
 ## Network architecture
-<img width="458" height="382" alt="Diagram bez tytułu drawio" src="https://github.com/user-attachments/assets/72091c07-e910-49a7-b186-78bba1a979dd" />
+<img width="759" height="661" alt="Network architecture - three segmented zones" src="https://github.com/user-attachments/assets/7f8c8f2d-5053-47ea-9e59-1566ca5cb7ee" />
 
 ## Network addressing
 
