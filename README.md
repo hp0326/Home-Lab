@@ -4,8 +4,11 @@ Segmented network with services: Linux router, DMZ with reverse proxy, hardening
 ## Project objective
 
 ## Technologies used
+Ubuntu, nftables, dnsmasq, Docker, nginx, WireGuard, Python, PowerShell
 
 ## Network architecture
+<img width="759" height="660" alt="diagram" src="https://github.com/user-attachments/assets/4eddf94a-4408-4ca8-b52b-624c51dd859b" />
+
 
 ## Network addressing
 
