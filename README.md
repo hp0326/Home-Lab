@@ -1,14 +1,11 @@
 # Home-Lab 
 Segmented network with services: Linux router, DMZ with reverse proxy, hardening, infrastructure verifying script
 
-## Project objective
-
 ## Technologies used
 Ubuntu, nftables, dnsmasq, Docker, nginx, WireGuard, Python, PowerShell
 
 ## Network architecture
 <img width="759" height="661" alt="Diagram bez tytułu drawio (2)" src="https://github.com/user-attachments/assets/5bae4eed-1821-4691-8b58-fa66e4dade88" />
-
 
 ## Network addressing
 
