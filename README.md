@@ -14,6 +14,13 @@ Ubuntu, nftables, dnsmasq, Docker, nginx, WireGuard, Python, PowerShell
 * Built a custom multi-layer verification tool (ports/TLS/HTTP) for the lab infrastructure
   
 ## Problems & lessons learned
+I tested verification script by intentionally breaking a service to see if the script would detect the failure. 
+I stopped the container running the backend of a simple web app.
+
+I noticed that the service still responded over HTTPS, because the script tested only if the TLS handshake is successful. 
+The handshake itself is not enough, because it involves a proxy that terminates TLS locally and then queries the backend behind it.
+
+To correctly test the verification script it should be done layer by layer (ports/TLS/HTTP) - each layer sees what lower layers can't, so I added an HTTP-status check.
 
 ## Components
 
