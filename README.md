@@ -1,4 +1,5 @@
-# Home-Lab - segmented network with services
+# Home-Lab 
+Segmented network with services: Linux router, DMZ with reverse proxy, hardening, infrastructure verifying script
 
 ## Project objective
 
