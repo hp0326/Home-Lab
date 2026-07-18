@@ -8,7 +8,11 @@ Segmented network with services: Linux router, DMZ with reverse proxy, hardening
 Ubuntu, nftables, dnsmasq, Docker, nginx, WireGuard, Python, PowerShell
 
 ## What this project demonstrates
-
+* Designed a zone-segmented network with different levels of trust (LAN/DMZ/SERVERS) 
+* Configured firewall rules according to the default-deny principle
+* Automated server hardening (idempotent - safe to re-run)
+* Built a custom multi-layer verification tool (ports/TLS/HTTP) for the lab infrastructure
+  
 ## Problems & lessons learned
 
 ## Components
