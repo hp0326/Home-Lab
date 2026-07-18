@@ -7,8 +7,7 @@ Segmented network with services: Linux router, DMZ with reverse proxy, hardening
 Ubuntu, nftables, dnsmasq, Docker, nginx, WireGuard, Python, PowerShell
 
 ## Network architecture
-<img width="759" height="660" alt="diagram" src="https://github.com/user-attachments/assets/4eddf94a-4408-4ca8-b52b-624c51dd859b" />
-
+<img width="759" height="660" alt="diagram drawio" src="https://github.com/user-attachments/assets/22a9a1a0-661f-40e1-9a01-d5b8ab9bb0fc" />
 
 ## Network addressing
 
