@@ -1,6 +1,9 @@
 import socket
 import ssl
 from datetime import datetime, timezone
+import sys
+
+WARN_DAYS = 30
 
 def check_tls(host, port):
 
@@ -28,7 +31,27 @@ def check_tls(host, port):
 def main():
     hosts = ["app1.lab", "app2.lab"]
 
-    for host in hosts:
-        print(check_tls(host, 443))
+    problems = 0
 
+    for host in hosts:
+        print(host)
+        result = (check_tls(host, 443))
+        #for key, value in result.items():
+            #print(f"{key}: {value}")
+        if result["status"] == "ok":
+            print(f"TLS version: {result['tls_version']}")
+            if result["days_left"] < 0:
+                print("Certificate expired")
+            elif 0 <= result["days_left"] < WARN_DAYS:
+                print(f"Certificate will expire in {result['days_left']}")
+            else:
+                print("Certificate is valid")
+        elif result["status"] == "unreachable":
+            print(f"Service unreachable: {result['error']}")
+            problems = 1
+        elif result["status"] == "cert_error":
+            print(f"Certificate error: {result['error']}")
+            problems = 1        
+        print("\n")
+    sys.exit(1 if problems else 0)
 main()
