@@ -34,6 +34,8 @@ To correctly test the verification script it should be done layer by layer (port
 
 **proxy/** - nginx reverse proxy configuration. Listens on port 443 with a self-signed TLS certificate. The proxy redirects HTTP to HTTPS (301).
 
+**web1/** and **web2/** - simple HTML backends running in Docker containers behind the nginx reverse proxy.
+
 ## Technical details
 
 Network addressing
