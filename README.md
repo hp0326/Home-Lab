@@ -2,7 +2,7 @@
 Segmented network with services: Linux router, DMZ with reverse proxy, hardening, infrastructure verifying script
 
 ## Network architecture
-<img width="759" height="661" alt="Network architecture - three segmented zones" src="https://github.com/user-attachments/assets/7f8c8f2d-5053-47ea-9e59-1566ca5cb7ee" />
+<img width="822" height="674" alt="Network architecture - three segmented zones" src="https://github.com/user-attachments/assets/1faf24cc-92ae-4f37-b942-30b8369eedff" />
 
 ## Technologies used
 Ubuntu, nftables, dnsmasq, Docker, nginx, WireGuard, Python, PowerShell
@@ -23,8 +23,11 @@ The handshake itself is not enough, because it involves a proxy that terminates 
 To correctly test the verification script it should be done layer by layer (ports/TLS/HTTP) - each layer sees what lower layers can't, so I added an HTTP-status check.
 
 ## Components
+ad/ - Powershell scripts for Active Directory administration:
+* Audit.ps1 reports accounts without password requirement and privileged group members in the domain. 
+* Create-Users.ps1 autometes creating AD users from a CSV file, with validation and idempotency (skips accounts that already exist).
+* System_details.ps1 provides information about the system such as OS version, amount of RAM or free disk space.
 
-## Status
 
 ## Technical details
 
