@@ -30,6 +30,8 @@ To correctly test the verification script it should be done layer by layer (port
 
 **hardening/** - Idempotent Bash script created for hardening Linux servers (SSH key auth, firewall, fail2ban, auto-updates). It's safe to re-run.
 
+**verify/** - Python script providing multi-layer verification (ports/TLS/HTTP) of the lab infrastructure with a report and a non-zero exit code on failure
+
 ## Technical details
 
 Network addressing
