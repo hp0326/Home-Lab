@@ -48,7 +48,25 @@ Network addressing
 
 Virtual Machines
 
+| VM        | Role                               | Zone          | OS             |
+|-----------|------------------------------------|---------------|----------------|
+| router    | routing, firewall, DHCP/DNS        | between zones | Ubuntu Server  |
+| proxy/DMZ | reverse proxy + Docker backends    | DMZ           | Ubuntu Server  |
+| DC        | Active Directory domain controller | SERVERS       | Windows Server |
+| client    | domain-joined workstation          | LAN           | Windows 10 Pro |
+| client    | domain-joined workstation          | LAN           | Ubuntu Server |
+
 Firewall rules
+
+Mapping: enp0s8 - LAN, enp0s9 - DMZ, enp0s10 - SERVERS
+
+<img width="617" height="646" alt="firewall_rules" src="https://github.com/user-attachments/assets/b19e4e51-32db-4f1a-a317-b052d3abc1f9" />
+
+The firewall uses a default-deny policy on the forward chain — all cross-zone traffic is dropped unless explicitly allowed, with established/related connections permitted for return traffic.
+
+Allowed flows: LAN can reach DMZ web services (80/443) and the domain controller in SERVERS on the required Active Directory ports (DNS, Kerberos, LDAP, SMB, RPC). The VPN interface (wg0) can reach all zones as a management network.
+
+The DMZ cannot initiate connections into SERVERS or LAN — a compromised web service is contained within its zone and cannot pivot toward the domain controller or clients.
 
 
 
